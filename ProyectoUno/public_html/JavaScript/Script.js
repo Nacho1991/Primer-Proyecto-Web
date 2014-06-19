@@ -89,6 +89,9 @@ function ocultaTodo()
     ///////////////
     var elDiv = document.getElementById('pestannaTres');
     elDiv.style.display = 'none';
+    
+        var elDiv = document.getElementById('pestannaCuatro');
+    elDiv.style.display = 'none';
     //////////////
     
         var elDiv = document.getElementById('mensajemodificado');
