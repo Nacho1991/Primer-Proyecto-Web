@@ -77,27 +77,48 @@
                             </fieldset>	
                         </div>
                         <div class="tabdiv" id="tabdiv-1">
-                            <fieldset>
-                                <legend>Listas de carreras</legend>
-                                <table class="tabla" id="tabla-1">
-                                    <tr id="columna-1">
-                                        <td>Código</td>
-                                        <td>Nombre de la carrera</td>
-                                    </tr>
-                                    <tr id="columna-2">
-                                        <td>ISW</td>
-                                        <td>Ingenieria En Software</td>
-                                    </tr>
-                                    <tr id="columna-3">
-                                        <td>COFI</td>
-                                        <td>Contabilidad y Finanzas</td>
-                                    </tr>
-                                    <tr id="columna-4">
-                                        <td>ADM</td>
-                                        <td>Comercio Exterior</td>
-                                    </tr>
-                                </table>
-                            </fieldset>
+                            <div id="listacarreras">
+                                <fieldset>
+                                    <legend>Listas de carreras</legend>
+                                    <table class="tabla" id="tabla-1">
+                                        <tr id="columna-1">
+                                            <td>Código</td>
+                                            <td>Nombre de la carrera</td>
+                                            <td>Opciones</td>
+                                        </tr>
+                                        <tr id="columna-2">
+                                            <td>ISW</td>
+                                            <td>Ingenieria En Software</td>
+                                            <td>
+                                                <input type="button" value="Editar" name="btnEditar" onclick="muestra('editarcarrera');
+                                                        oculta('listacarreras');oculta('mensajecarreraeliminad');oculta('mensajecarreramodificada')" />
+                                                <input type="button" value="Eliminar" name="btnEliminar" onclick="confirmacion();muestra('mensajecarreraeliminad')"/>
+                                            </td>
+                                        </tr>
+                                        <tr id="columna-3">
+                                            <td>COFI</td>
+                                            <td>Contabilidad y Finanzas</td>
+                                            <td>
+                                                <input type="button" value="Editar" name="btnEditar" onclick="muestra('editarcarrera');
+                                                        oculta('listacarreras');oculta('mensajecarreraeliminad');oculta('mensajecarreramodificada')" />
+                                                <input type="button" value="Eliminar" name="btnEliminar" onclick="confirmacion();muestra('mensajecarreraeliminad')"/>
+                                            </td>
+                                        </tr>
+                                        <tr id="columna-4">
+                                            <td>ADM</td>
+                                            <td>Comercio Exterior</td>
+                                            <td>
+                                                <input type="button" value="Editar" name="btnEditar" onclick="muestra('editarcarrera');
+                                                        oculta('listacarreras');oculta('mensajecarreraeliminad');oculta('mensajecarreramodificada')"/>
+                                                <input type="button" value="Eliminar" name="btnEliminar" onclick="confirmacion();muestra('mensajecarreraeliminad')"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </fieldset>
+                                <input type="button" value="Agregar carrera" name="btnAgregaCarrera" onclick="oculta('listacarreras');
+                                        muestra('agregarcarrera');
+                                        oculta('mensajecarreraagregada');oculta('mensajecarreramodificada');oculta('mensajecarreraeliminad')"/>
+                            </div>
                             <div id="agregarcarrera">
                                 <fieldset>
                                     <legend>Datos a ingresar</legend>
@@ -106,8 +127,50 @@
                                     <br/>
                                     <label>Nombre de la carrera:</label>
                                     <input type="text" name="txtNombreCarrera" value="" size="25" />
+                                    <br/>
+                                    <label>Seleccionar Sede:</label>
+                                    <select name="cmbSedes">
+                                        <option>Sede San Carlos</option>
+                                        <option>Sede Atenas</option>
+                                        <option>Sede Central</option>
+                                        <option>Sede Pacifico</option>
+                                        <option>Sede Guanacaste</option>
+                                    </select>
                                 </fieldset>
+                                <input type="button" value="Agregar carrera" name="btnAgregarCarrera" onclick="muestra('listacarreras');
+                                        oculta('agregarcarrera');
+                                        muestra('mensajecarreraagregada')"/>
+                                <input type="button" value="Cancelar" name="btnCancelar" onclick="muestra('listacarreras');
+                                        oculta('agregarcarrera')"/>
                             </div>
+                            <div id="editarcarrera">
+                                <fieldset>
+                                    <legend>Datos a modificar</legend>
+                                    <label>Codigo de la carrera:</label>
+                                    <input type="text" name="txtCodigo" value="" size="25" />
+                                    <br/>
+                                    <label>Nombre de la carrera:</label>
+                                    <input type="text" name="txtNombre" value="" size="25" />
+                                    <br/>
+                                    <label>Seleccionar Sede:</label>
+                                    <select name="cmbSedes">
+                                        <option>Sede San Carlos</option>
+                                        <option>Sede Atenas</option>
+                                        <option>Sede Central</option>
+                                        <option>Sede Pacifico</option>
+                                        <option>Sede Guanacaste</option>
+                                    </select>
+                                </fieldset>
+                                <input type="button" value="Modificar" name="btnModificar" onclick="muestra('mensajecarreramodificada');
+                                        oculta('editarcarrera');
+                                        muestra('listacarreras')"/>
+                                <input type="button" value="Cancelar" name="btnCancelar" onclick="
+                                        oculta('editarcarrera');
+                                        muestra('listacarreras')"/>
+                            </div>
+                            <p id="mensajecarreraeliminad">La carrera se ha eliminado con exito</p>
+                            <p id="mensajecarreraagregada">La carrera se ha registrado con exito</p>
+                            <p id="mensajecarreramodificada">La carrera se ha modificado con exito</p>
                         </div>
                         <div class="tabdiv" id="tabdiv-2">
                             <div id="editarEstudiante">
