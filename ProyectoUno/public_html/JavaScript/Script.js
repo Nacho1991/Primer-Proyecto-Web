@@ -69,38 +69,38 @@ function confirmacion()
     if (r == true) {
         txt = "Registro eliminado con éxito!";
         alert(txt);
-    } 
+    }
     return txt;
 }
 function ocultaTodo()
 {
-        var elDiv = document.getElementById('mensajecarreraeliminad');
+    var elDiv = document.getElementById('mensajecarreraeliminad');
     elDiv.style.display = 'none';
-    
-        var elDiv = document.getElementById('mensajecarreraagregada');
+
+    var elDiv = document.getElementById('mensajecarreraagregada');
     elDiv.style.display = 'none';
-    
-        var elDiv = document.getElementById('mensajecarreramodificada');
+
+    var elDiv = document.getElementById('mensajecarreramodificada');
     elDiv.style.display = 'none';
-    
-    
+
+
     var elDiv = document.getElementById('pestannaDos');
     elDiv.style.display = 'none';
     ///////////////
     var elDiv = document.getElementById('pestannaTres');
     elDiv.style.display = 'none';
-    
-        var elDiv = document.getElementById('pestannaCuatro');
+
+    var elDiv = document.getElementById('pestannaCuatro');
     elDiv.style.display = 'none';
     //////////////
-    
-        var elDiv = document.getElementById('mensajemodificado');
+
+    var elDiv = document.getElementById('mensajemodificado');
     elDiv.style.display = 'none';
-    
-        var elDiv = document.getElementById('mensajeeliminado');
+
+    var elDiv = document.getElementById('mensajeeliminado');
     elDiv.style.display = 'none';
-    
-    
+
+
     var elDiv = document.getElementById('editarusuario');
     elDiv.style.display = 'none';
     ///////////////
@@ -109,13 +109,13 @@ function ocultaTodo()
     /////////////
     var elDiv = document.getElementById('exitoagregadoestudiante');
     elDiv.style.display = 'none';
-    
+
     var elDiv = document.getElementById('editarcarrera');
     elDiv.style.display = 'none';
-    
+
     var elDiv = document.getElementById('agregarcarrera');
     elDiv.style.display = 'none';
-    
+
     var elDiv = document.getElementById('exitoeliminadoestudiante');
     elDiv.style.display = 'none';
 
@@ -144,4 +144,37 @@ function muestra(id) {
 }
 function nombreBoton(esto)
 {
+}
+function tableCreate() {
+    var body = document.getElementsByTagName('body')[0];
+    var tbl = document.createElement('table');
+    tbl.style.width = '100%';
+    tbl.setAttribute('border', '1');
+    var tbdy = document.createElement('tbody');
+    for (var i = 0; i < 3; i++) {
+        var tr = document.createElement('tr');
+        for (var j = 0; j < 2; j++) {
+            if (i == 2 && j == 1) {
+                break
+            } else {
+                var td = document.createElement('td');
+                td.appendChild(document.createTextNode('\u0020'))
+                i == 1 && j == 1 ? td.setAttribute('rowSpan', '2') : null;
+                tr.appendChild(td)
+            }
+        }
+        tbdy.appendChild(tr);
+    }
+    tbl.appendChild(tbdy);
+    body.appendChild(tbl)
+}
+function resultado()
+{
+    window.open("C:/ProyectoUno/public_html/SearchResult.html");
+    window.close();
+}
+function retroceder()
+{
+    window.open("C:/ProyectoUno/public_html/WebPublic.html");
+    window.close();
 }
